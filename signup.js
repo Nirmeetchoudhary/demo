@@ -31,7 +31,7 @@ document.getElementById("signupBtn").addEventListener("click", async () => {
     });
 
     alert("Signup successful!");
-    window.location.href = "protected.html";
+    window.location.href = "index.html";
   } catch (error) {
     alert("Signup error: " + error.message);
   }
