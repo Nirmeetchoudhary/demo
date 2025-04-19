@@ -13,18 +13,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Check auth state
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    // User is signed in
     document.getElementById("userEmail").innerText = `Logged in as: ${user.email}`;
   } else {
-    window.location.href = "login.html";
+    // Not signed in — redirect to signup
+    window.location.href = "signup.html";
   }
 });
 
-// Logout
+// Logout button
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   await signOut(auth);
   alert("Logged out!");
-  window.location.href = "login.html";
+  window.location.href = "signup.html";
 });
