@@ -20,7 +20,7 @@ document.getElementById("loginBtn").addEventListener("click", async () => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login successful!");
-    window.location.href = "protected.html";
+    window.location.href = "index.html";
   } catch (error) {
     alert("Login error: " + error.message);
   }
