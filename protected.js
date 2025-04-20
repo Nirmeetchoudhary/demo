@@ -17,13 +17,13 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
     document.getElementById("userEmail").innerText = `Logged in as: ${user.email}`;
+    document.body.style.display = "block"; // Show content
   } else {
     // Not signed in — redirect to signup
     window.location.href = "signup.html";
   }
 });
 
-// Logout button
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   await signOut(auth);
   alert("Logged out!");
